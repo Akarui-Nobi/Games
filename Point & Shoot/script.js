@@ -12,7 +12,7 @@ let gameOver = false;
 ctx.font = '50px Impact';
 
 let timeToNextRaven = 0;
-let ravenInterval = 500;
+let ravenInterval = 350;
 let lastTime = 0;
 
 let ravens = [];
@@ -25,7 +25,7 @@ class Raven {
         this.height = this.spriteHeigth * this.sizeModifier;
         this.x = canvas.width;
         this.y = Math.random() * (canvas.height - this.height);
-        this.directionX = Math.random() * 5 + 2;
+        this.directionX = Math.random() * 5 + 4;
         this.directionY = Math.random() * 5 - 2.5;
         this.markedForDeletion = false;
         this.image = new Image();
