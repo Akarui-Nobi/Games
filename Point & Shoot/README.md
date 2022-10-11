@@ -1,1 +1,1 @@
-Play: https://akarui-point-shoot.netlify.app
+# Play: https://akarui-point-shoot.netlify.app
