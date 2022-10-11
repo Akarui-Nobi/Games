@@ -26,7 +26,7 @@ window.addEventListener('load', function(){
             this.height = this.spriteHeigth * this.sizeModifier;
             this.x = canvas.width;
             this.y = Math.random() * (canvas.height - this.height);
-            this.directionX = Math.random() * 5 + 5;
+            this.directionX = Math.random() * 5 + 6;
             this.directionY = Math.random() * 5 - 2.5;
             this.markedForDeletion = false;
             this.image = new Image();
