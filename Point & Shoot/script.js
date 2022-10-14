@@ -128,6 +128,7 @@ class Particle {
 }
 
 function drawScore(){
+    ctx.textAlign = 'left';
     ctx.fillStyle = 'black';
     ctx.fillText('Score: ' + score, 50 , 75);
     ctx.fillStyle = 'white';
@@ -137,9 +138,10 @@ function drawScore(){
 function drawGameOver(){
     ctx.textAlign = 'center';
     ctx.fillStyle = 'black';
-    ctx.fillText('GAME OVER, your score is ' + score, canvas.width * 0.5, canvas.height * 0.5);
+    ctx.fillText('GAME OVER, your score is ' + score + '. ' + 'Press Space to retry!', canvas.width * 0.5, canvas.height * 0.5);
     ctx.fillStyle = 'white';
-    ctx.fillText('GAME OVER, your score is ' + score, canvas.width * 0.5 + 5, canvas.height * 0.5 + 5);}
+    ctx.fillText('GAME OVER, your score is ' + score + '. ' + 'Press Space to retry!', canvas.width * 0.5 + 5, canvas.height * 0.5 + 5);
+}
 
 window.addEventListener('click', function(e){
     const detectPixelColor = collisionCtx.getImageData(e.x, e.y, 1, 1);
@@ -152,6 +154,17 @@ window.addEventListener('click', function(e){
         }
     });
 });
+
+window.addEventListener('keydown', e => {
+    if (e.key === ' ' && gameOver) restartGame();
+});
+
+function restartGame(){
+    ravens = [];
+    score = 0;
+    gameOver = false;
+    animate(0);
+}
 
 function animate(timestamp){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
